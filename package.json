@@ -4,13 +4,14 @@
   "description": "graphQL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index"
   },
   "author": "Bradley Richardson",
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.7.2",
     "graphql": "^14.4.2",
-    "mongoose": "^5.6.7"
+    "mongoose": "^5.6.7",
+    "nodemon": "^1.19.1"
   }
 }
