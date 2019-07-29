@@ -1,11 +1,9 @@
-/// dependency imports
-const { ApolloServer } = require("apollo-server");
-const mongoose = require("mongoose");
+const { ApolloServer } = require('apollo-server');
+const mongoose = require('mongoose');
 
-/// relative imports
-const { MONGODB } = require("./config.js");
-const typeDefs = require("./graphql/typeDefs");
-const resolvers = require("./graphql/resolvers");
+const typeDefs = require('./graphql/typeDefs');
+const resolvers = require('./graphql/resolvers');
+const { MONGODB } = require('./config.js');
 
 const server = new ApolloServer({
   typeDefs,
@@ -15,12 +13,9 @@ const server = new ApolloServer({
 mongoose
   .connect(MONGODB, { useNewUrlParser: true })
   .then(() => {
-    console.log("mongo connected 😎");
+    console.log('MongoDB Connected');
     return server.listen({ port: 5000 });
   })
-  .then(res => {
-    console.log(`server running at ${res.url}`);
+  .then((res) => {
+    console.log(`Server running at ${res.url}`);
   });
-
-/// run server with 'node index'
-// crtl + enter to execute query
